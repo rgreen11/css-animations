@@ -1,0 +1,163 @@
+body {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ---------- UnderLine Link---------- */
+
+a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: cornflowerblue;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20%;
+
+}
+
+a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 5%;
+    background-color: cornflowerblue;
+    transform: translateX(-100%);
+    transition: all .7s ease-out;
+
+}
+
+a:hover:after {
+    transform: translateX(0);
+}
+
+
+/* ---------- Sliding Text---------- */
+
+.slide-text {
+    color: palevioletred;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.slide-text:before {
+    content: 'Richieeee!';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: palegreen;
+    width: 0;
+    transition: .7s;
+    overflow: hidden;
+}
+
+.slide-text:hover::before {
+    width: 100%;
+}
+
+/* ---------- CSS loader ---------- */
+
+.loader-div {
+    margin-top: 100px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.loader-cw {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid goldenrod;
+    transform: rotate(45deg);
+    animation: rotate-cw 3s infinite alternate;
+}
+
+@keyframes rotate-cw {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    25% {
+        transform: rotate(135deg);
+    }
+
+    50% {
+        transform: rotate(225deg);
+    }
+
+    75% {
+        transform: rotate(315deg);
+    }
+
+    100% {
+        transform: rotate(405deg);
+    }
+}
+
+
+.loader-cc {
+    width: 100%;
+    height: 100%;
+    border: 5px solid rgb(134, 32, 218);
+    position: absolute;
+    animation: rotate-cc 3s infinite alternate;
+    background-color: white;
+}
+
+@keyframes rotate-cc {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-90deg);
+    }
+
+    50% {
+        transform: rotate(-180deg);
+    }
+
+    75% {
+        transform: rotate(-270deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/* ---------- CSS loader 2 ---------- */
+
+
+.loader-div-2 {
+    margin-top: 150px;
+    perspective: 1000px;
+    /* perspective has to go on the parent */
+}
+
+.loader {
+    width: 200px;
+    height: 200px;
+    background-color: indigo;
+    border-radius: 15px;
+    animation: rotate-loader 2s infinite linear;
+}
+
+
+@keyframes rotate-loader {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateX(180deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(180deg) rotateY(180deg);
+    }
+}
